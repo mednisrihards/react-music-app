@@ -1,0 +1,56 @@
+.container {
+  background-color: #222831;
+  height: 4vh;
+  min-height: 25px;
+  padding: 1vh 4vh 2vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #EEEEEE;
+}
+
+.logo {
+  width: 15vw;
+}
+
+.logo img {
+  height: 100%;
+}
+
+.navItems {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.navItems li {
+  list-style: none;
+  margin: 0 20px;
+  cursor: pointer;
+}
+
+.navItems__right, .navItems__left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.navItems__search {
+  width: 310px;
+  height: 15px;
+  background-color: #393E46;
+  font-size: .7em;
+  padding: 5px;
+  color: #EEEEEE;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+}
+/*# sourceMappingURL=NavBar.module.css.map */

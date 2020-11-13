@@ -1,0 +1,72 @@
+.container {
+  background-color: #393E46;
+  height: 67vh;
+  color: #EEEEEE;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th {
+  text-align: left;
+  padding: 10px 8px;
+  border-bottom: 1px solid #EEEEEE;
+}
+
+table th:first-child {
+  padding-left: 15px;
+}
+
+table thead > tr {
+  background-color: transparent !important;
+}
+
+table tr:nth-child(odd) {
+  background-color: #222831;
+}
+
+table tr {
+  padding: 0 10px;
+  width: 100%;
+}
+
+table td {
+  padding: 8px 8px;
+}
+
+table td:first-child {
+  padding-left: 15px;
+}
+
+table .love {
+  text-align: left;
+}
+
+table .love img {
+  width: 15px;
+  height: 15px;
+}
+
+table .song {
+  width: 35%;
+}
+
+table .lenght {
+  width: 10%;
+  text-align: center;
+}
+
+table .artist {
+  width: 15%;
+}
+
+table .album {
+  width: 15%;
+}
+
+table .genre {
+  width: 10%;
+}
+/*# sourceMappingURL=Content.module.css.map */

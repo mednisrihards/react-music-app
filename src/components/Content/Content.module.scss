@@ -1,0 +1,76 @@
+$color-primary: #222831;
+$color-secondary: #393E46;
+$color-text: #EEEEEE;
+$color-text-faded: #6E6E6E;
+
+.container {
+    background-color: $color-secondary;
+    height: 67vh;
+    color: $color-text;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+
+    th {
+        text-align: left;
+        padding: 10px 8px;
+        border-bottom: 1px solid $color-text;
+
+        &:first-child {
+            padding-left: 15px;
+        }
+    }
+
+    thead>tr {
+        background-color: transparent !important;
+    }
+
+    tr:nth-child(odd) {
+        background-color: $color-primary
+    }
+
+    tr {
+        padding: 0 10px;
+        width: 100%;
+    }
+
+    td {
+        padding: 8px 8px;
+
+        &:first-child {
+            padding-left: 15px;
+        }
+    }
+
+    .love {
+        text-align: left;
+
+        img {
+            width: 15px;
+            height: 15px;
+        }
+    }
+
+    .song {
+        width: 35%;
+    }
+
+    .lenght {
+        width: 10%;
+        text-align: center;
+    }
+
+    .artist {
+        width: 15%;
+    }
+
+    .album {
+        width: 15%;
+    }
+
+    .genre {
+        width: 10%;
+    }
+}

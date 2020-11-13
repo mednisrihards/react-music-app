@@ -1,0 +1,53 @@
+$color-primary: #222831;
+$color-secondary: #393E46;
+$color-text: #EEEEEE;
+$color-text-faded: #6E6E6E;
+
+.container {
+    display: flex;
+    background-color: $color-primary;
+    height: 24vh;
+    width: 100%;
+    padding: 1vh 0;
+    color: $color-text;
+}
+
+.artWork {
+    align-self: center;
+    height: 100%;
+    width: auto;
+}
+
+.details {
+    margin-left: 1vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 60%;
+}
+
+.buttons {
+    display: flex;
+    width: 9vw;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    
+    img {
+        height: 100%;
+        width: auto;
+    }
+}
+
+.timing {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.progressBar {
+    width: 100%;
+    height: 5px;
+    background-color: $color-secondary;
+    margin-top: 1vh;
+}

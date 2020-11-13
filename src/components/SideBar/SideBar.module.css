@@ -1,0 +1,26 @@
+.container {
+  background-color: #222831;
+  height: 93vh;
+  width: 12vw;
+  float: left;
+  padding-left: 2vw;
+  color: #EEEEEE;
+}
+
+li {
+  list-style: none;
+  margin: 0 0 10px 15px;
+  cursor: pointer;
+}
+
+i {
+  margin-right: 5px;
+}
+
+.library li:first-child,
+.playlists li:first-child {
+  color: #6E6E6E;
+  margin: 30px 0 10px 0;
+  cursor: default;
+}
+/*# sourceMappingURL=SideBar.module.css.map */
