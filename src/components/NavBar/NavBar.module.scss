@@ -2,6 +2,7 @@ $color-primary: #222831;
 $color-secondary: #393E46;
 $color-text: #EEEEEE;
 $color-text-faded: #6E6E6E;
+$color-active: #FF5722;
 
 .container {
     background-color: $color-primary;
@@ -14,8 +15,9 @@ $color-text-faded: #6E6E6E;
 
 .logo {
     width: 15vw;
-    
+
     img {
+      
         height: 100%;
     }
 }
@@ -50,5 +52,6 @@ $color-text-faded: #6E6E6E;
     }
 }
 
-
-
+.active {
+    color: $color-active;
+}

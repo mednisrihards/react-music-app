@@ -53,4 +53,8 @@
   outline: none;
   border: none;
 }
+
+.active {
+  color: #FF5722;
+}
 /*# sourceMappingURL=NavBar.module.css.map */

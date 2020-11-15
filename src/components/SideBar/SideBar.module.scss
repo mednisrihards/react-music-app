@@ -2,22 +2,14 @@ $color-primary: #222831;
 $color-secondary: #393E46;
 $color-text: #EEEEEE;
 $color-text-faded: #6E6E6E;
+$color-active: #FF5722;
 
 .container {
     background-color: $color-primary;
     height: 93vh;
     width: 12vw;
-    // padding: 5px 20px;
     float: left;
-    // padding: 1vh 2vh;
-    padding-left: 2vw;
     color: $color-text;
-}
-
-li {
-    list-style: none;
-    margin: 0 0 10px 15px;
-    cursor: pointer;
 }
 
 i {
@@ -29,6 +21,22 @@ i {
     li:first-child {
         color: $color-text-faded;
         margin: 30px 0 10px 0;
+        padding-left: 1vw;
         cursor: default;
     }
+}
+
+.active {
+    color: $color-active;
+    border-left: 5px solid $color-active;
+}
+
+.listItem {
+    padding: 1vh 2vw;
+    cursor: pointer;
+}
+
+.modal {
+    width: 500px;
+    height: 500px;
 }

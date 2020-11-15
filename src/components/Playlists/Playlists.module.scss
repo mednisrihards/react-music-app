@@ -1,0 +1,31 @@
+$color-primary: #222831;
+$color-secondary: #393E46;
+$color-text: #EEEEEE;
+$color-text-faded: #6E6E6E;
+
+.container {
+    background-color: $color-secondary;
+    height: 67vh;
+    color: $color-text;
+    overflow: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 250px;
+    height: 300px;
+    margin: 50px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.img {
+    height: auto;
+    width: 100%;
+}
+
+.name {
+    font-size: 1.5em;
+    margin-top: 20px;
+}

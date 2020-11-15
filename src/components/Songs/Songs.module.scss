@@ -7,27 +7,31 @@ $color-text-faded: #6E6E6E;
     background-color: $color-secondary;
     height: 67vh;
     color: $color-text;
+    overflow: auto;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
 
+    thead {
+        background-color: $color-primary;
+        position: sticky;
+        top: 0;
+    }
+    
     th {
         text-align: left;
         padding: 10px 8px;
         border-bottom: 1px solid $color-text;
+   
 
         &:first-child {
             padding-left: 15px;
         }
     }
 
-    thead>tr {
-        background-color: transparent !important;
-    }
-
-    tr:nth-child(odd) {
+    tr:nth-child(even) {
         background-color: $color-primary
     }
 
@@ -46,14 +50,14 @@ table {
 
     .love {
         text-align: left;
-
+        
         img {
             width: 15px;
             height: 15px;
         }
     }
 
-    .song {
+    .name {
         width: 35%;
     }
 

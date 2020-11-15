@@ -1,0 +1,262 @@
+{
+    "Hip Hop": [
+        {
+            "id": 1,
+            "name": "I met Tay Keith first (feat. Lil Baby & Moneybagg Yo)",
+            "lenght": "3:08",
+            "artist": "Blac Youngsta",
+            "album": "F*ck everybody 3",
+            "genre": "Hip Hop"
+        },
+        {
+            "id": 2,
+            "name": "All These N****s (feat. Lil Durk)",
+            "lenght": "2:25",
+            "artist": "King Von",
+            "album": "Welcome to O'Block",
+            "genre": "Hip Hop"
+        }
+    ],
+    "Pop": [
+        {
+            "id" : 1,
+            "name": "I met Tay Keith first (feat. Lil Baby & Moneybagg Yo)",
+            "lenght": "3:08",
+            "artist": "Blac Youngsta",
+            "album": "F*ck everybody 3",
+            "genre": "Hip Hop"
+        },
+        {
+            "id" : 2,
+            "name": "All These N****s (feat. Lil Durk)",
+            "lenght": "2:25",
+            "artist": "King Von",
+            "album": "Welcome to O'Block",
+            "genre": "Hip Hop"
+        },
+        {
+            "id" : 3,
+            "name": "I met Tay Keith first (feat. Lil Baby & Moneybagg Yo)",
+            "lenght": "3:08",
+            "artist": "Blac Youngsta",
+            "album": "F*ck everybody 3",
+            "genre": "Hip Hop"
+        },
+        {
+            "id" : 4,
+            "name": "All These N****s (feat. Lil Durk)",
+            "lenght": "2:25",
+            "artist": "King Von",
+            "album": "Welcome to O'Block",
+            "genre": "Hip Hop"
+        },
+        {
+            "id" : 5,
+            "name": "I met Tay Keith first (feat. Lil Baby & Moneybagg Yo)",
+            "lenght": "3:08",
+            "artist": "Blac Youngsta",
+            "album": "F*ck everybody 3",
+            "genre": "Hip Hop"
+        },
+        {
+            "id" : 6,
+            "name": "All These N****s (feat. Lil Durk)",
+            "lenght": "2:25",
+            "artist": "King Von",
+            "album": "Welcome to O'Block",
+            "genre": "Hip Hop"
+        },
+        {
+            "id" : 7,
+            "name": "I met Tay Keith first (feat. Lil Baby & Moneybagg Yo)",
+            "lenght": "3:08",
+            "artist": "Blac Youngsta",
+            "album": "F*ck everybody 3",
+            "genre": "Hip Hop"
+        },
+        {
+            "id" : 8,
+            "name": "All These N****s (feat. Lil Durk)",
+            "lenght": "2:25",
+            "artist": "King Von",
+            "album": "Welcome to O'Block",
+            "genre": "Hip Hop"
+        },
+        {
+            "id" : 9,
+            "name": "I met Tay Keith first (feat. Lil Baby & Moneybagg Yo)",
+            "lenght": "3:08",
+            "artist": "Blac Youngsta",
+            "album": "F*ck everybody 3",
+            "genre": "Hip Hop"
+        },
+        {
+            "id" : 10,
+            "name": "All These N****s (feat. Lil Durk)",
+            "lenght": "2:25",
+            "artist": "King Von",
+            "album": "Welcome to O'Block",
+            "genre": "Hip Hop"
+        },
+        {
+            "id" : 11,
+            "name": "I met Tay Keith first (feat. Lil Baby & Moneybagg Yo)",
+            "lenght": "3:08",
+            "artist": "Blac Youngsta",
+            "album": "F*ck everybody 3",
+            "genre": "Hip Hop"
+        },
+        {
+            "id" : 12,
+            "name": "All These N****s (feat. Lil Durk)",
+            "lenght": "2:25",
+            "artist": "King Von",
+            "album": "Welcome to O'Block",
+            "genre": "Hip Hop"
+        },
+        {
+            "id" : 13,
+            "name": "I met Tay Keith first (feat. Lil Baby & Moneybagg Yo)",
+            "lenght": "3:08",
+            "artist": "Blac Youngsta",
+            "album": "F*ck everybody 3",
+            "genre": "Hip Hop"
+        },
+        {
+            "id" : 14,
+            "name": "All These N****s (feat. Lil Durk)",
+            "lenght": "2:25",
+            "artist": "King Von",
+            "album": "Welcome to O'Block",
+            "genre": "Hip Hop"
+        },
+        {
+            "id" : 15,
+            "name": "I met Tay Keith first (feat. Lil Baby & Moneybagg Yo)",
+            "lenght": "3:08",
+            "artist": "Blac Youngsta",
+            "album": "F*ck everybody 3",
+            "genre": "Hip Hop"
+        },
+        {
+            "id" : 16,
+            "name": "All These N****s (feat. Lil Durk)",
+            "lenght": "2:25",
+            "artist": "King Von",
+            "album": "Welcome to O'Block",
+            "genre": "Hip Hop"
+        },
+        {
+            "id" : 17,
+            "name": "I met Tay Keith first (feat. Lil Baby & Moneybagg Yo)",
+            "lenght": "3:08",
+            "artist": "Blac Youngsta",
+            "album": "F*ck everybody 3",
+            "genre": "Hip Hop"
+        },
+        {
+            "id" : 18,
+            "name": "All These N****s (feat. Lil Durk)",
+            "lenght": "2:25",
+            "artist": "King Von",
+            "album": "Welcome to O'Block",
+            "genre": "Hip Hop"
+        },
+        {
+            "id" : 19,
+            "name": "I met Tay Keith first (feat. Lil Baby & Moneybagg Yo)",
+            "lenght": "3:08",
+            "artist": "Blac Youngsta",
+            "album": "F*ck everybody 3",
+            "genre": "Hip Hop"
+        },
+        {
+            "id" : 20,
+            "name": "All These N****s (feat. Lil Durk)",
+            "lenght": "2:25",
+            "artist": "King Von",
+            "album": "Welcome to O'Block",
+            "genre": "Hip Hop"
+        },
+        {
+            "id" : 21,
+            "name": "I met Tay Keith first (feat. Lil Baby & Moneybagg Yo)",
+            "lenght": "3:08",
+            "artist": "Blac Youngsta",
+            "album": "F*ck everybody 3",
+            "genre": "Hip Hop"
+        },
+        {
+            "id" : 22,
+            "name": "All These N****s (feat. Lil Durk)",
+            "lenght": "2:25",
+            "artist": "King Von",
+            "album": "Welcome to O'Block",
+            "genre": "Hip Hop"
+        },
+        {
+            "id" : 23,
+            "name": "I met Tay Keith first (feat. Lil Baby & Moneybagg Yo)",
+            "lenght": "3:08",
+            "artist": "Blac Youngsta",
+            "album": "F*ck everybody 3",
+            "genre": "Hip Hop"
+        },
+        {
+            "id" : 24,
+            "name": "All These N****s (feat. Lil Durk)",
+            "lenght": "2:25",
+            "artist": "King Von",
+            "album": "Welcome to O'Block",
+            "genre": "Hip Hop"
+        },
+        {
+            "id" : 25,
+            "name": "I met Tay Keith first (feat. Lil Baby & Moneybagg Yo)",
+            "lenght": "3:08",
+            "artist": "Blac Youngsta",
+            "album": "F*ck everybody 3",
+            "genre": "Hip Hop"
+        },
+        {
+            "id" : 26,
+            "name": "All These N****s (feat. Lil Durk)",
+            "lenght": "2:25",
+            "artist": "King Von",
+            "album": "Welcome to O'Block",
+            "genre": "Hip Hop"
+        },
+        {
+            "id" : 27,
+            "name": "I met Tay Keith first (feat. Lil Baby & Moneybagg Yo)",
+            "lenght": "3:08",
+            "artist": "Blac Youngsta",
+            "album": "F*ck everybody 3",
+            "genre": "Hip Hop"
+        },
+        {
+            "id" : 28,
+            "name": "All These N****s (feat. Lil Durk)",
+            "lenght": "2:25",
+            "artist": "King Von",
+            "album": "Welcome to O'Block",
+            "genre": "Hip Hop"
+        },
+        {
+            "id" : 29,
+            "name": "I met Tay Keith first (feat. Lil Baby & Moneybagg Yo)",
+            "lenght": "3:08",
+            "artist": "Blac Youngsta",
+            "album": "F*ck everybody 3",
+            "genre": "Hip Hop"
+        },
+        {
+            "id" : 30,
+            "name": "All These N****s (feat. Lil Durk)",
+            "lenght": "2:25",
+            "artist": "King Von",
+            "album": "Welcome to O'Block",
+            "genre": "Hip Hop"
+        }
+    ]
+}

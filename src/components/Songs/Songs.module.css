@@ -2,11 +2,19 @@
   background-color: #393E46;
   height: 67vh;
   color: #EEEEEE;
+  overflow: auto;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
+}
+
+table thead {
+  background-color: #222831;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
 }
 
 table th {
@@ -19,11 +27,7 @@ table th:first-child {
   padding-left: 15px;
 }
 
-table thead > tr {
-  background-color: transparent !important;
-}
-
-table tr:nth-child(odd) {
+table tr:nth-child(even) {
   background-color: #222831;
 }
 
@@ -49,7 +53,7 @@ table .love img {
   height: 15px;
 }
 
-table .song {
+table .name {
   width: 35%;
 }
 
@@ -69,4 +73,4 @@ table .album {
 table .genre {
   width: 10%;
 }
-/*# sourceMappingURL=Content.module.css.map */
+/*# sourceMappingURL=Songs.module.css.map */
