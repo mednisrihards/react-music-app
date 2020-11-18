@@ -34,6 +34,7 @@ table tr:nth-child(even) {
 table tr {
   padding: 0 10px;
   width: 100%;
+  cursor: pointer;
 }
 
 table td {
@@ -44,13 +45,17 @@ table td:first-child {
   padding-left: 15px;
 }
 
-table .love {
-  text-align: left;
+table .add {
+  text-align: center;
+  width: 30px;
 }
 
-table .love img {
+table .add i {
+  position: relative;
+  z-index: 3;
   width: 15px;
   height: 15px;
+  cursor: pointer;
 }
 
 table .name {

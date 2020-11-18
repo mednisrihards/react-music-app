@@ -38,6 +38,7 @@ table {
     tr {
         padding: 0 10px;
         width: 100%;
+        cursor: pointer;
     }
 
     td {
@@ -48,12 +49,16 @@ table {
         }
     }
 
-    .love {
-        text-align: left;
-        
-        img {
+    .add {
+        text-align: center;
+        width: 30px;
+
+        i {
+            position: relative;
+            z-index: 3;
             width: 15px;
             height: 15px;
+            cursor: pointer;
         }
     }
 

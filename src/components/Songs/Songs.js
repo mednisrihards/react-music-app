@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import classes from './Songs.module.css';
-import heart from '../../assets/heart.svg';
 
 const Songs = props => {
 
@@ -9,28 +8,37 @@ const Songs = props => {
             <table>
                 <thead>
                     <tr>
+                        <th className={classes.add}></th>
                         <th className={classes.song}>Song</th>
                         <th className={classes.lenght}>Lenght</th>
                         <th className={classes.artist}>Artist</th>
                         <th className={classes.album}>Album</th>
-                        {/* <th className={classes.genre}>Genre</th> */}
-                        <th className={classes.love}><img src={heart} alt='love'/></th>
                     </tr>
                 </thead>
                 <tbody>
-
                 { props.songs.map(item => (
-                            <tr key={item.track.id}>
-                                <td className={classes.song}>{item.track.name}</td>
-                                <td className={classes.lenght}>{Math.floor((item.track.duration_ms/1000/60) << 0) + ":" + Math.floor((item.track.duration_ms/1000) % 60)}</td>
-                                <td className={classes.artist}>{item.track.artists[0].name}</td>
-                                <td className={classes.album}>{item.track.album.name}</td>
-                                {/* <td className={classes.genre}>{item.genre}</td> */}
-                                <td className={classes.love}><img src={heart} alt='love'/></td>
+                    
+                            <tr key={item.id}>
+                                <td className={classes.add}><i className="fa fa-plus"></i></td>
+                                <td className={classes.song} onClick={() => {
+                                    props.setCurrentSong({
+                                        name: item.name,
+                                        album: item.albumName,
+                                        year: item.albumReleaseDate.substring(0, 4),
+                                        artWork: item.albumArtWork,
+                                        duration: item.durationMs
+                                    })
+                                }}>{item.name}</td>
+                                <td className={classes.lenght}>{Math.floor((item.durationMs/1000/60) << 0) + ":" + Math.floor((item.durationMs/1000) % 60)}</td>
+                                <td className={classes.artist} onClick={() => {
+                                //    props.setArtist(item.artist)
+                                //    props.setDisplay('albums')
+                                }}>{item.artist}</td>
+                                <td className={classes.album}>{item.albumName}</td>
                             </tr>
                         ))
+                        
                     }
-
                 </tbody>
             </table>
         </div>

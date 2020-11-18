@@ -10,6 +10,10 @@
       flex-wrap: wrap;
 }
 
+.divider {
+  border-top: 1px solid #222831;
+}
+
 .card {
   width: 250px;
   height: 300px;
@@ -27,4 +31,4 @@
   font-size: 1.5em;
   margin-top: 20px;
 }
-/*# sourceMappingURL=Playlists.module.css.map */
+/*# sourceMappingURL=Albums.module.css.map */

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import classes from './SideBar.module.css';
 import Modal from 'react-modal';
+// import styled from 'styled-components';
 
 const SideBar = props => {
 
@@ -12,7 +13,7 @@ const SideBar = props => {
             <Modal
                 bodyOpenClassName={classes.modal}
                 isOpen={modalIsOpen}
-                onRequestClose={() => props.setModalIsOpen(false)}
+                onRequestClose={() => setModalIsOpen(false)}
             >
                 <p>Set the new playlist name</p>
                 <input type="text"/>
@@ -23,30 +24,39 @@ const SideBar = props => {
                 <li className={classes.listItem}>Library</li>
                 <li className={classes.listItem}>Recently added</li>
                 <li className={classes.listItem}>Artists</li>
-                <li className={classes.listItem}>Albums</li>
-                <li className={classes.listItem}>Songs</li>
                 <li className={classes.listItem}
                     onClick={() => {
-                        props.setDisplay('genres')
+                        // props.setDisplay('albums')
                     }}
-                >Genres</li>
+                >Albums</li>
+                <li className={classes.listItem}
+                    onClick={() => {
+                        props.setDisplay('songs')
+                    }}
+                >Songs</li>
+                <li className={classes.listItem}
+                    onClick={() => {
+                        props.setDisplay('categories')
+                    }}
+                >Categories</li>
            </ul>
             <ul className={classes.playlists}>
                 <li className={classes.listItem}>Playlists</li>
 
-                {/* {props.playlists.map((playlist, index) => (
+                {props.playlists.map(playlist => (
                             <li
-                                key={playlist}
+                                key={playlist.id}
                                 onClick= {() => {
-                                    props.setCurrentPlaylist(playlist)
+                                    props.setCurrentPlaylist(playlist.id)
                                 }}
-                                className={`${playlist === props.currentPlaylist ? classes.active : '' } ${classes.listItem}`}
+                                className={`${playlist.id === props.currentPlaylist ? classes.active : '' } ${classes.listItem}`}
                             >
-                                {playlist}
+                                {playlist.name}
                             </li>
                         )
                     )
-                } */}
+                }
+
                 <li className={classes.listItem} onClick= {() => setModalIsOpen(true)}>
                     <i className="fa fa-plus-circle"></i>New playlist
                 </li>

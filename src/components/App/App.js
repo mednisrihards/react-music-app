@@ -1,137 +1,201 @@
-import React, {useEffect, useState } from 'react';
+import React, {useEffect, useState, Component } from 'react';
+import queryString from 'query-string';
 import './App.css';
 import NavBar from '../NavBar/NavBar';
 import SideBar from '../SideBar/SideBar';
 import Songs from '../Songs/Songs';
-import Genres from '../Genres/Genres';
+import Categories from '../Categories/Categories';
 import Player from '../Player/Player';
 import Playlists from '../Playlists/Playlists';
-// import SongsData from '../../assets/Songs.json';
-import { Credentials } from '../../assets/Credentials';
+import Albums from '../Albums/Albums';
 import axios from 'axios';
 
-function App() {
+class App extends Component {
 
-  const spotify = Credentials();
-  const [token, setToken] = useState('');
+  constructor (props) {
+    super(props)
+  
+    this.setCurrentPlaylist = this.setCurrentPlaylist.bind(this)
+    this.setSongs = this.setSongs.bind(this)
+    this.setPlaylists = this.setPlaylists.bind(this)
+    this.setCurrentCategory = this.setCurrentCategory.bind(this)
+    this.setCurrentSong = this.setCurrentSong.bind(this)
+    this.setDisplay = this.setDisplay.bind(this)
+    this.search = this.search.bind(this)
 
-  const [genres, setGenres] = useState([]);
-  const [currentGenre, setCurrentGenre] = useState('at_home');
+    this.state = {
+      token: queryString.parse(window.location.search).access_token,
+      user: {},
+      display: 'categories',
+      playlists: [],
+      myPlaylists: [],
+      currentPlaylist: '',
+      currentCategory: '',
+      categories: [],
+      songs: [],
+      currentSong: {}
+    }
 
-  const [playlists, setPlaylists] = useState();
-  const [myPlaylists, setMyPlaylists] = useState();
-  const [currentPlaylist, setCurrentPlaylist] = useState('3cEYpjA9oz9GiPac4AsH4n');
-
-  const [songs, setSongs] = useState({});
-  const [display, setDisplay] = useState('genres');
-
-// ---------------------------------------------------------------------------
-//   GET CATEGORIES
-// ---------------------------------------------------------------------------
-  useEffect(() => {
-    axios('https://accounts.spotify.com/api/token', {
-      headers: {
-        'Content-Type' : 'application/x-www-form-urlencoded',
-        'Authorization' : 'Basic ' + btoa(spotify.ClientId + ':' + spotify.ClientSecret)
-      },
-      data: 'grant_type=client_credentials',
-      method: 'POST'
-    }).then(tokenResponse => {
-      setToken(tokenResponse.data.access_token)
-
-      axios('https://api.spotify.com/v1/browse/categories?locale=sv_US', {
-        method: 'GET',
-        headers: {'Authorization' : 'Bearer ' + tokenResponse.data.access_token}
-      }).then (
-        genreResponse => {
-          setGenres(genreResponse.data.categories.items);
-        }
-      )
-    });
-  }, [spotify.ClientId, spotify.ClientSecret])
-
-// ---------------------------------------------------------------------------
-//   GET PLAYLISTS
-// ---------------------------------------------------------------------------
-  useEffect(() => {
-    axios('https://accounts.spotify.com/api/token', {
-      headers: {
-        'Content-Type' : 'application/x-www-form-urlencoded',
-        'Authorization' : 'Basic ' + btoa(spotify.ClientId + ':' + spotify.ClientSecret)
-      },
-      data: 'grant_type=client_credentials',
-      method: 'POST'
-    }).then(tokenResponse => {
-        axios(`https://api.spotify.com/v1/browse/categories/${currentGenre}/playlists?country=LV
-        `, {
+    axios(`https://api.spotify.com/v1/me`, {
           method: 'GET',
-          headers: {'Authorization' : 'Bearer ' + tokenResponse.data.access_token}
+          headers: {'Authorization' : 'Bearer ' + this.state.token}
         }).then (
-          playlistResponse => {
-            setPlaylists(playlistResponse.data.playlists.items)
-          })
-    })
-  }, [currentGenre])
-
-// ---------------------------------------------------------------------------
-//   GET SONGS
-// ---------------------------------------------------------------------------
-useEffect(() => {
-  axios('https://accounts.spotify.com/api/token', {
-    headers: {
-      'Content-Type' : 'application/x-www-form-urlencoded',
-      'Authorization' : 'Basic ' + btoa(spotify.ClientId + ':' + spotify.ClientSecret)
-    },
-    data: 'grant_type=client_credentials',
-    method: 'POST'
-  }).then(tokenResponse => {
-      axios(`https://api.spotify.com/v1/playlists/${currentPlaylist}/tracks?market=US`, {
-        method: 'GET',
-        headers: {'Authorization' : 'Bearer ' + tokenResponse.data.access_token}
-      }).then (
-        songsResponse => {
-          setSongs(songsResponse.data.items)
+          userResponse => {
+            this.setState({
+              user: {
+                id: userResponse.data.id
+              }
+            })
         })
-  })
-}, [currentPlaylist])
+    .then(
+      axios(`https://api.spotify.com/v1/browse/categories?locale=LV`, {
+        method: 'GET',
+        headers: {'Authorization' : 'Bearer ' + this.state.token}
+      }).then (
+        categoriesResponse => {
+          this.setState({
+            categories: categoriesResponse.data.categories.items
+          })
+        })
+    )
+    .then (
+      axios(`https://api.spotify.com/v1/me/playlists`, {
+        method: 'GET',
+        headers: {'Authorization' : 'Bearer ' + this.state.token}
+      }).then (
+        playlistResponse => {
+          this.setState({
+            myPlaylists: playlistResponse.data.items
+          })
+        })
+    )
+  }
 
+  setCurrentPlaylist(playlist) {
+    this.setSongs(playlist)
+    this.setState({
+      currentPlaylist: playlist,
+      display: 'songs'
+    })
+  }
 
+  setCurrentSong(song) {
+    this.setState({
+      currentSong:{
+        name: song.name,
+        album: song.album,
+        year: song.year,
+        artWork: song.artWork,
+        duration: song.duration
+      }
+    })
+  }
 
+  setCurrentCategory(category) {
+    this.setPlaylists(category)
+    this.setState({
+      currentCategory: category,
+      display: 'playlists'
+    })
+  }
+ 
+  setDisplay(display) {
+    this.setState({
+      display: display
+    })
+  }
 
+  setPlaylists(categoryId) {
+    axios(`https://api.spotify.com/v1/browse/categories/${categoryId}/playlists?country=LV`, {
+      method: 'GET',
+      headers: {'Authorization' : 'Bearer ' + this.state.token}
+    }).then (
+      playlistResponse => {
+        this.setState({
+          playlists: playlistResponse.data.playlists.items
+        })
+      })
+  }
 
-
-
-
-
-
-
-
-
-
-
-
-
-  return (
-    <div className="App">
-      <NavBar setDisplay= {setDisplay}/>
-      <div className="flexContainer">
-        <SideBar setDisplay= {setDisplay} currentPlaylist= {currentPlaylist} setCurrentPlaylist= {setCurrentPlaylist} playlists={ playlists } />
-        <div className="right">
-          {display === 'genres' ?
-              <Genres genres={genres} setCurrentGenre= {setCurrentGenre} setDisplay={setDisplay} />
-            : 
-                (display === 'playlists'
-                  ? <Playlists setDisplay={setDisplay} playlists={playlists} setCurrentPlaylist={setCurrentPlaylist} />
-                  :<Songs songs={songs}/>
-                )
+  setSongs(playlistId) {
+    axios(`https://api.spotify.com/v1/playlists/${playlistId}/tracks?market=US`, {
+      method: 'GET',
+      headers: {'Authorization' : 'Bearer ' + this.state.token}
+    }).then (
+      songsResponse => {
+        const temp = Object.entries(songsResponse.data.items).map(([song, data])=>{
+          return {
+            id: data.track.id,
+            name: data.track.name,
+            artist: data.track.artists[0].name,
+            albumName: data.track.album.name,
+            albumReleaseDate: data.track.album.release_date,
+            albumArtWork: data.track.album.images[0].url,
+            durationMs: data.track.duration_ms,
           }
-      
-          <Player />
-        </div>
-        
-      </div>
-    </div>
-  );
-}
+      });
+      this.setState({
+        songs: temp
+      })
+    })
+  }
 
+  search(query) {    
+    axios(`https://api.spotify.com/v1/search/?q=${query}&type=track,album`, {
+      method: 'GET',
+      headers: {'Authorization' : 'Bearer ' + this.state.token}
+    }).then (
+      songsResponse => {
+        const temp = Object.entries(songsResponse.data.tracks.items).map(([song, data])=>{
+          return {
+            id: data.id,
+            name: data.name,
+            artist: data.artists[0].name,
+            albumName: data.album.name,
+            albumReleaseDate: data.album.release_date,
+            albumArtWork: data.album.images[0].url,
+            durationMs: data.duration_ms,
+          }
+        
+      });
+      this.setState({
+        songs: temp,
+        display: 'songs'
+      })
+    })
+  }
+
+  render(){
+
+    return(
+      <div className="App">
+        <NavBar search={this.search} setDisplay={this.setDisplay}/>
+        <div className="flexContainer">
+          <SideBar setSongs={this.state.songs} setCurrentPlaylist= {this.setCurrentPlaylist}  setDisplay={this.setDisplay} currentPlaylist= {this.state.currentPlaylist} playlists={ this.state.myPlaylists }/>
+          <div className="right">
+            {this.state.display === 'myPlaylists'
+              ? <Playlists setCurrentPlaylist= {this.setCurrentPlaylist} playlists={this.state.myPlaylists} />
+              :
+                (this.state.display === 'playlists'
+                  ? <Playlists setCurrentPlaylist= {this.setCurrentPlaylist} playlists={this.state.playlists} />
+                  : 
+                    (this.state.display === 'albums'
+                      // ? <Albums albums={albums} />
+                      ? null
+                      : 
+                        (this.state.display === 'categories'
+                        ? <Categories setCurrentCategory= {this.setCurrentCategory} categories={this.state.categories}/>
+                        : <Songs songs={this.state.songs} setCurrentSong={this.setCurrentSong}/>
+                        )
+                    )
+                )           
+            }
+            <Player currentSong={this.state.currentSong} />
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+}
 export default App;

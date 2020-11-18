@@ -4,16 +4,15 @@ import artWork from '../../assets/blac-youngsta.jpeg';
 import prev from '../../assets/prev.svg';
 import play from '../../assets/play.svg';
 import next from '../../assets/next.svg';
-// import styled from 'styled-components';
 
-const Player = () => {
+const Player = props => {
 
     return (
         <div className={classes.container}>
-           <img className={classes.artWork} src={artWork} alt="artwork"/>
+           <img className={classes.artWork} src={props.currentSong.artWork} alt="artwork"/>
            <div className={classes.details}>
-                <p className={classes.name}>I met Tay Keith first (feat. Lil Baby & Moneybagg Yo)</p>
-                <p className={classes.fullName}>Blac Youngsta - I met Tay Keith first (feat. Lil Baby & Moneybagg Yo) - F*ck Everybody 3 (2020)</p>
+                <p className={classes.name}>{props.currentSong.name}</p>
+                <p className={classes.fullName}>{`${props.currentSong.name} - ${props.currentSong.album} (${props.currentSong.year})`}</p>
                 <div className={classes.buttons}>
                     <img className={classes.prev} src={prev} alt="prev"/>
                     <img className={classes.play} src={play} alt="play"/>
@@ -21,8 +20,8 @@ const Player = () => {
                 </div>
                 <div>
                     <div className={classes.timing}>
-                        <span className={classes.played}>0:53</span>
-                        <span className={classes.left}>2:32</span>
+                        <span className={classes.played}>0:00</span>
+                        <span className={classes.left}>{Math.floor((props.currentSong.duration/1000/60) << 0) + ":" + Math.floor((props.currentSong.duration/1000) % 60)}</span>
                     
                     </div>
                     <div className={classes.progressBar}></div>
