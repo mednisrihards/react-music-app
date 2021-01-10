@@ -1,6 +1,6 @@
 {
-  "homepage": "http://165.22.17.31/RihardsMednisCom/react_music_app",
-  "name": "weather_api",
+  "homepage": "http://165.22.17.31/Rihards/react_music_app",
+  "name": "react-music-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

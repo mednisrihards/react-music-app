@@ -16,9 +16,8 @@ const NavBar = props => {
 
     return (
         <div className={classes.container}>
-            <div className={classes.logo}>
-                <img src={logo} alt='logo'/>
-            </div>
+            <i className={classes.burger} class="fa fa-bars"></i>
+            <img className={classes.logo} src={logo} alt='logo'/>
             <div className={classes.navItems}>
                 <ul className={classes.navItems__left}>
                     <li className={classes.navItems__item}>Library</li>

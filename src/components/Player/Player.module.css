@@ -15,10 +15,11 @@
       align-self: center;
   height: 100%;
   width: auto;
+  max-width: 300px;
 }
 
 .details {
-  margin-left: 1vh;
+  margin: 0 1vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -36,7 +37,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 9vw;
+  width: 6vw;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -47,8 +48,9 @@
 }
 
 .buttons img {
-  height: 100%;
-  width: auto;
+  height: 60px;
+  width: 60px;
+  margin: 10px;
 }
 
 .timing {

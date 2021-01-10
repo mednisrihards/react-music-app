@@ -16,10 +16,11 @@ $color-text-faded: #6E6E6E;
     align-self: center;
     height: 100%;
     width: auto;
+    max-width: 300px;
 }
 
 .details {
-    margin-left: 1vh;
+    margin: 0 1vw;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -28,14 +29,15 @@ $color-text-faded: #6E6E6E;
 
 .buttons {
     display: flex;
-    width: 9vw;
+    width: 6vw;
     align-items: center;
     justify-content: space-between;
     cursor: pointer;
     
     img {
-        height: 100%;
-        width: auto;
+        height: 60px;
+        width: 60px;
+        margin: 10px;
     }
 }
 
